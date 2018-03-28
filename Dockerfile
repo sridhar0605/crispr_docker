@@ -57,8 +57,8 @@ WORKDIR /docker_main
 WORKDIR /docker_main
 RUN wget https://github.com/lucapinello/CRISPResso/archive/master.zip && \
     unzip master.zip && \
-    cd CRISPResso-master && python setup.py install \
-RUN cp -p CRISPResso-master/CRISPResso* /usr/bin
+    cd CRISPResso-master && python setup.py install
+RUN cp -p CRISPResso-master/CRISPResso*.py /usr/bin
 
 #install flash 
 WORKDIR /docker_main
