@@ -68,7 +68,6 @@ RUN wget http://ccb.jhu.edu/software/FLASH/FLASH-1.2.11-Linux-x86_64.tar.gz && \
 #     cd CRISPResso-master && python setup.py install && \
 #     cp -p CRISPResso-master/* /usr/bin
 
-RUN conda install biopython
 
 RUN wget https://github.com/lucapinello/CRISPResso/archive/master.zip
 
