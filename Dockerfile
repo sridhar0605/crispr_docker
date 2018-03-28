@@ -66,7 +66,7 @@ RUN wget https://github.com/lucapinello/CRISPResso/archive/master.zip && \
 
 # Clean up
 RUN cd /docker_main / && \
-   rm -rf CRISPResso-master FLASH-1.2.11 && \
+   rm -rf CRISPResso-master FLASH-1.2.11-Linux-x86_64 && \
    apt-get autoremove -y && \
    apt-get autoclean -y  && \
    apt-get clean
