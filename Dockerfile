@@ -35,7 +35,9 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     hdf5-tools \
     libhdf5-dev \
     hdf5-helpers \
-    ncurses-dev
+    ncurses-dev \
+    default-jre \
+    samtools
     
 
 RUN pip install --upgrade pip && \
@@ -59,12 +61,22 @@ RUN wget http://ccb.jhu.edu/software/FLASH/FLASH-1.2.11-Linux-x86_64.tar.gz && \
     tar -zxvf FLASH-1.2.11-Linux-x86_64.tar.gz && \
     cp -p FLASH-1.2.11-Linux-x86_64/flash /usr/bin
 
-#install crispresso
-WORKDIR /docker_main
-RUN wget https://github.com/lucapinello/CRISPResso/archive/master.zip && \
-    unzip master.zip && \
-    cd CRISPResso-master && python setup.py install && \
-    cp -p CRISPResso-master/* /usr/bin
+# install crispresso
+# WORKDIR /docker_main
+# RUN wget https://github.com/lucapinello/CRISPResso/archive/master.zip && \
+#     unzip master.zip && \
+#     cd CRISPResso-master && python setup.py install && \
+#     cp -p CRISPResso-master/* /usr/bin
+
+RUN conda install biopython
+
+RUN wget https://github.com/lucapinello/CRISPResso/archive/master.zip
+
+RUN unzip master.zip
+
+RUN cd CRISPResso-master && python setup.py install
+
+ENV PATH /root/CRISPResso_dependencies/bin:$PATH
 
 # Clean up
 RUN cd /docker_main / && \
