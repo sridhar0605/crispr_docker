@@ -4,6 +4,8 @@ MAINTAINER sridhar <sridhar@wustl.edu>
 
 LABEL docker_image crispr_analysis
 
+ENV SHELL bash
+
 #dependencies
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
