@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 
 MAINTAINER sridhar <sridhar@wustl.edu>
 
-LABEL docker_image rna_seq_analysis
+LABEL docker_image crispr_analysis
 
 #dependencies
 
@@ -69,7 +69,7 @@ RUN cp -p FLASH-1.2.11/flash /usr/bin
 
 # Clean up
 RUN cd /docker_main / && \
-   rm -rf CRISPResso-master && \
+   rm -rf CRISPResso-master FLASH-1.2.11 && \
    apt-get autoremove -y && \
    apt-get autoclean -y  && \
    apt-get clean
