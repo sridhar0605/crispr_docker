@@ -55,9 +55,7 @@ WORKDIR /docker_main
 WORKDIR /docker_main
 RUN wget http://ccb.jhu.edu/software/FLASH/FLASH-1.2.11-Linux-x86_64.tar.gz && \
     tar -zxvf FLASH-1.2.11-Linux-x86_64.tar.gz && \
-    cd FLASH-1.2.11 && \ 
-    make && \
-    cp -p FLASH-1.2.11/* /usr/bin
+    cp -p FLASH-1.2.11-Linux-x86_64/flash /usr/bin
 
 #install crispresso
 WORKDIR /docker_main
