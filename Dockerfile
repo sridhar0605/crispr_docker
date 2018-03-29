@@ -64,10 +64,10 @@ RUN wget http://ccb.jhu.edu/software/FLASH/FLASH-1.2.11-Linux-x86_64.tar.gz && \
 #install EMBOSS
 WORKDIR /docker_main
 RUN wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.6.0.tar.gz && \
-    tar -xvf EMBOSS-6.6.0.tar.gz && \
+    tar -xf EMBOSS-6.6.0.tar.gz && \
     cd EMBOSS-6.6.0 && ./configure --without-x && \
     make && \
-    cp -p EMBOSS-6.6.0/emboss/ /usr/bin
+    cp -p /docker_main/EMBOSS-6.6.0/emboss/* /usr/bin
 
 # install crispresso
 # WORKDIR /docker_main
