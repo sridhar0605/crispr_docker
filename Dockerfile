@@ -64,7 +64,7 @@ RUN wget http://ccb.jhu.edu/software/FLASH/FLASH-1.2.11-Linux-x86_64.tar.gz && \
 #install EMBOSS
 WORKDIR /docker_main
 RUN wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.6.0.tar.gz && \
-    tr -xvf EMBOSS-6.6.0.tar.gz && \
+    tar -xvf EMBOSS-6.6.0.tar.gz && \
     ./configure && \
     make && \
     cp -p EMBOSS-6.6.0/emboss/needle /usr/bin
