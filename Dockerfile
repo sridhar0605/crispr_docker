@@ -67,7 +67,7 @@ RUN wget ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.6.0.tar.gz && \
     tar -xvf EMBOSS-6.6.0.tar.gz && \
     cd EMBOSS-6.6.0 && ./configure --without-x && \
     make && \
-    cp -p EMBOSS-6.6.0/emboss/needle /usr/bin
+    cp -p EMBOSS-6.6.0/emboss/ /usr/bin
 
 # install crispresso
 # WORKDIR /docker_main
